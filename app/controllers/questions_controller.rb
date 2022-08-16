@@ -7,8 +7,10 @@ class QuestionsController < ApplicationController
   end
 
   def coach_answer(your_message)
-    if your_message == 'I am going to work right now!'
-      'Great!'
+    if your_message.blank?
+      'I can`t hear your!'
+    elsif your_message == 'I am going to work now'
+      'Ok. Great!'
     elsif your_message.include? '?'
       'Silly question, get dressed and go to work!'
     else
